@@ -1,124 +1,71 @@
-# Smart Retail Management System using Salesforce LWC
+# 🛍️ Smart Retail Management System using Salesforce LWC
 
-🚀 A Salesforce-based project that leverages **Lightning Web Components (LWC)**, **Apex**, and **Process Automation** to build a Smart Retail Management System with barcode scanning, automated customer notifications, and smart product management.
-
----
-
-## 📌 Project Phases (8-Day Plan)
-
-### ✅ Day 1: Problem Understanding & Industry Analysis
-- Requirement Gathering
-- Stakeholder Analysis
-- Business Process Mapping
-- Industry-specific Use Case Analysis
-- AppExchange Exploration
-📂 Files: [Day-1/](./Day-1)
+## 📌 Project Overview
+The **Smart Retail Management System** is a Salesforce Lightning Web Component (LWC) based solution designed to enhance the retail shopping experience.  
+By integrating **camera-based barcode/QR code scanning**, the system automates product management, streamlines checkout, and improves customer engagement through personalized notifications and offers.
 
 ---
 
-### 📅 Day 2: Org Setup & Basic Configuration
-- Salesforce Editions & Dev Org
-- Company Profile Setup
-- Business Hours & Fiscal Year
-- User Setup & Licenses
+## 🔹 Key Features
 
-📂 Files: [Day-2/](./Day-2)
+### 📷 Product Scanning
+- Integrates a camera within the LWC to scan **product barcodes or QR codes**.  
+- Automatically captures product details such as:
+  - Product Code  
+  - Price  
+  - Expiry / Manufacturing Date  
 
----
+### 🛒 Smart Cart System
+- Each scanned product is **added to a virtual shopping cart**.  
+- Supports multiple products.  
+- **Automatically calculates** the total amount in real-time.  
 
-### 📅 Day 3: Security Model
-- Profiles
-- Roles
-- Permission Sets
-- OWD & Sharing Rules
-- Login Access Policies
+### 👤 Customer Association
+- Links purchased products to **customer records in Salesforce**.  
+- Maintains a **history of items bought** by each customer.  
 
-📂 Files: [Day-3/](./Day-3)
+### 🔔 Automated Notifications
+- Sends **expiry reminders** (e.g., 2 days before product expiry).  
+- Enables **marketing campaigns** like festival offers, discounts, and personalized promotions.  
 
----
-
-### 📅 Day 4: Data Modeling & Relationships
-- Standard & Custom Objects
-- Fields, Record Types
-- Page Layouts & Compact Layouts
-- Schema Builder
-- Lookup vs Master-Detail
-- Junction & External Objects
-
-📂 Files: [Day-4/](./Day-4)
+### 📂 Data Management
+- Implements **batch processes** to delete expired/outdated product data.  
+- Maintains **efficient and clean customer-product records**.  
 
 ---
 
-### 📅 Day 5: Process Automation
-- Validation Rules
-- Workflow Rules
-- Process Builder
-- Approval Process
-- Flow Builder (Record-triggered, Auto-launched, Scheduled)
-- Email Alerts, Field Updates, Tasks, Notifications
-
-📂 Files: [Day-5/](./Day-5)
+## 🎯 Expected Outcome
+A **Smart Retail Automation System** that:
+- Simplifies checkout using **barcode scanning**.  
+- Enhances customer engagement through **proactive reminders & personalized campaigns**.  
+- Ensures data accuracy and efficiency with **Salesforce automation tools** (Flows, Validation Rules, Batch Apex).  
 
 ---
 
-### 📅 Day 6: Apex Development
-- Classes & Objects
-- Triggers (with design pattern)
-- SOQL & SOSL
-- Collections: List, Set, Map
-- Batch, Queueable, Scheduled Apex
-- Future Methods
-- Exception Handling
-- Test Classes
-
-📂 Files: [Day-6/](./Day-6)
+## 🛠️ Tech Stack
+- **Salesforce LWC (Lightning Web Components)**  
+- **Apex** (Batch jobs, Triggers, Controllers)  
+- **Salesforce Flows & Validation Rules**  
+- **Salesforce Reports & Dashboards**  
+- **AppExchange Components (if needed)**  
 
 ---
 
-### 📅 Day 7: Lightning Web Components (UI)
-- Lightning App Builder
-- Record Pages, Tabs, Home Layouts
-- LWC Components
-- Apex with LWC
-- Events in LWC
-- Wire Adapters & Imperative Calls
-- Navigation Service
-
-📂 Files: [Day-7/](./Day-7)
-
----
-
-### 📅 Day 8: Integration, Data Management & Demo
-- Named Credentials
-- REST/SOAP Web Services
-- Callouts & Platform Events
-- Data Import/Export (Data Loader, Import Wizard)
-- Change Sets, Packages, VS Code & SFDX
-- Reports & Dashboards
-- Security Review (FLS, Audit Trail, Session Settings)
-- Final Demo & Documentation
-
-📂 Files: [Day-8/](./Day-8)
+## 📂 Project Phases
+The project will be implemented in **10 phases**:
+1. Requirement Gathering & Industry Analysis  
+2. Org Setup & Configuration  
+3. Data Modeling & Relationships  
+4. Process Automation (Admin)  
+5. Apex Programming (Developer)  
+6. User Interface Development (LWC)  
+7. Integration & External Access  
+8. Data Management & Deployment  
+9. Reporting, Dashboards & Security Review  
+10. Final Presentation & Demo  
 
 ---
 
-## 📖 Documentation
-All supporting documents, screenshots, and notes will be stored in the [Docs/](./Docs) folder.
-
----
-
-## 🌐 Tech Stack
-- Salesforce (Admin + Developer)
-- Lightning Web Components (LWC)
-- Apex
-- SOQL & SOSL
-- Process Automation (Flows, Validation Rules, Approval Process)
-- Integration (REST APIs, Platform Events)
-
----
-
-## 📊 Outcomes
-- Smart cart system with product barcode scanning
-- Customer engagement via automated notifications
-- Expiry-based reminders
-- Industry-ready Salesforce solution
+## 👨‍💻 Author
+**Mohammad Haji**  
+GitHub: [itsmehaji](https://github.com/itsmehaji)  
