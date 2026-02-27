@@ -292,4 +292,5 @@ This project demonstrates:
 ---------
 
 **Mohammad Haji**
-Salesforce | Apex | LWC | System Design 
+
+* Salesforce | Apex | LWC | System Design 
