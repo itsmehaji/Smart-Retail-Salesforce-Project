@@ -1,20 +1,18 @@
-# 🛍️ Project Brief: Smart Retail Management System using Salesforce LWC
+# Salesforce DX Project: Next Steps
 
-This project is about building a Salesforce Lightning Web Component (LWC) that works like a smart checkout + customer engagement system for retail stores.
+Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
 
-# 🔹 What it does:
+## How Do You Plan to Deploy Your Changes?
 
-* Product Scanning → A camera in the LWC scans barcodes/QR codes on products.
+Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
 
-* Smart Cart System → Each scan adds items into a virtual cart with auto-calculated totals.
+## Configure Your Salesforce DX Project
 
-* Customer Association → Purchases are linked to customer records in Salesforce.
+The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
 
-* Automated Notifications → Customers get expiry reminders (e.g., 2 days before expiry) and personalized offers during sales/festivals.
+## Read All About It
 
-* Data Management → Batch processes clean old/expired product data.
-  
-# End Result:
-A retailer can use Salesforce not just as a CRM, but also as a retail automation platform that improves checkout speed, customer loyalty, and sales campaigns.
-
----
+- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
+- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
+- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
+- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)

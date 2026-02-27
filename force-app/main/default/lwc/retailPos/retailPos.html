@@ -1,0 +1,161 @@
+<template>
+    <lightning-card title="Smart Retail POS">
+
+        <!-- Spinner -->
+        <template if:true={isLoading}>
+            <lightning-spinner alternative-text="Processing"></lightning-spinner>
+        </template>
+
+        <div class="slds-grid slds-gutters slds-p-around_medium">
+
+            <!-- ================= LEFT PANEL ================= -->
+            <div class="slds-col slds-size_1-of-2">
+
+                <!-- ================= CUSTOMER SEARCH ================= -->
+                <div class="customer-container">
+                    <lightning-input
+                        type="text"
+                        label="Search Customer"
+                        value={customerSearchKey}
+                        onchange={handleCustomerSearch}
+                        placeholder="Type customer name...">
+                    </lightning-input>
+
+                    <!-- Dropdown -->
+                    <template if:true={customerResults.length}>
+                        <div class="customer-dropdown">
+                            <template for:each={customerResults} for:item="cust">
+                                <div key={cust.Id}
+                                     class="customer-item"
+                                     data-id={cust.Id}
+                                     data-name={cust.Name}
+                                     onclick={handleCustomerSelect}>
+                                    {cust.Name}
+                                </div>
+                            </template>
+                        </div>
+                    </template>
+
+                    <!-- Create New -->
+                    <template if:true={showCreateOption}>
+                        <div class="customer-dropdown">
+                            <div class="customer-create"
+                                 onclick={handleCreateCustomer}>
+                                + Create "{customerSearchKey}"
+                            </div>
+                        </div>
+                    </template>
+                </div>
+
+                <!-- ================= PRODUCT SEARCH ================= -->
+                <lightning-input
+                    data-id="searchInput"
+                    label="Search Product"
+                    onchange={handleSearch}>
+                </lightning-input>
+
+                <!-- Product List -->
+                <template if:true={products}>
+                    <template for:each={products} for:item="product">
+                        <div key={product.Id} class="slds-box slds-m-top_small">
+
+                            <p><strong>{product.Name}</strong></p>
+                            <p>Price: {product.Price__c}</p>
+                            <p>Stock: {product.Available_Stock__c}</p>
+
+                            <lightning-button
+                                label="Add"
+                                variant="brand"
+                                onclick={addToCart}
+                                data-id={product.Id}
+                                disabled={product.isOutOfStock}>
+                            </lightning-button>
+
+                        </div>
+                    </template>
+                </template>
+
+            </div>
+
+            <!-- ================= RIGHT PANEL ================= -->
+            <div class="slds-col slds-size_1-of-2">
+
+                <h3 class="slds-text-heading_small">Cart</h3>
+
+                <template if:true={cartItems.length}>
+                    <template for:each={cartItems} for:item="item">
+
+                        <div key={item.productId} class="slds-box slds-m-top_small">
+
+                            <div class="slds-grid slds-grid_align-spread">
+                                <strong>{item.name}</strong>
+
+                                <lightning-button-icon
+                                    icon-name="utility:delete"
+                                    alternative-text="Remove"
+                                    onclick={removeFromCart}
+                                    data-id={item.productId}>
+                                </lightning-button-icon>
+                            </div>
+
+                            <div class="slds-grid slds-m-top_small slds-align_absolute-center">
+
+                                <lightning-button-icon
+                                    icon-name="utility:dash"
+                                    onclick={decreaseQty}
+                                    data-id={item.productId}>
+                                </lightning-button-icon>
+
+                                <span class="slds-m-horizontal_medium">
+                                    Qty: {item.quantity}
+                                </span>
+
+                                <lightning-button-icon
+                                    icon-name="utility:add"
+                                    onclick={increaseQty}
+                                    data-id={item.productId}>
+                                </lightning-button-icon>
+
+                            </div>
+
+                            <p class="slds-m-top_small">
+                                Total: {item.lineTotal}
+                            </p>
+
+                        </div>
+
+                    </template>
+                </template>
+
+                <!-- Footer -->
+                <div class="slds-m-top_medium slds-grid slds-grid_vertical-align-center">
+
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning-button
+                            label="Checkout"
+                            variant="success"
+                            onclick={handleCheckout}
+                            disabled={isCheckoutDisabled}>
+                        </lightning-button>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-3 slds-text-align_center">
+                        <h3><strong>Total: {cartTotal}</strong></h3>
+                    </div>
+
+                    <div class="slds-col slds-size_1-of-3 slds-text-align_right">
+                        <lightning-button
+                            label="Clear"
+                            variant="destructive-text"
+                            onclick={clearCart}
+                            disabled={isCheckoutDisabled}>
+                        </lightning-button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </lightning-card>
+</template>
